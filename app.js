@@ -119,6 +119,4 @@ else{
  res.end()
 }
 }).on('error',(e)=>console.log("Get Request could not be completed."))
-.listen(3000, function(){
-  console.log("Server listening on port 3000")
-})
+.listen(process.env.PORT || 3000)
