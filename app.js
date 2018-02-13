@@ -70,7 +70,7 @@ else if(pathedApiCall.dir === '/api/imagesearch'){
     }
 
   let searchReqTerms = {key: process.env.GOOGLE_SEARCH_API_KEY,
-                        cx: googleCX
+                        cx: googleCX,
                         searchType: 'image',
                         q: pathedApiCall.base,
                         num: 10,
