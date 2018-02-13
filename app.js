@@ -7,7 +7,7 @@ const practiceGetUrl = 'http://httpbin.org/get?key=' + process.env.PRACTICE_SECR
 const dbFunctions = require('./dbFunctions.js')
 const fs = require('fs')
 let uri = process.env.MONGOLAB_URI_LOCAL || process.env.MONGO_LAB_URI_HEROKU
-
+let googleCX = process.env.SEARCHENGINE_ID
 function getRequest(url){
   return new Promise((resolve,reject)=>{
     https.get(url,apiRes=>{
@@ -70,7 +70,7 @@ else if(pathedApiCall.dir === '/api/imagesearch'){
     }
 
   let searchReqTerms = {key: process.env.GOOGLE_SEARCH_API_KEY,
-                        cx: process.env.SEARCHENGINE_ID,
+                        cx: googleCX
                         searchType: 'image',
                         q: pathedApiCall.base,
                         num: 10,
